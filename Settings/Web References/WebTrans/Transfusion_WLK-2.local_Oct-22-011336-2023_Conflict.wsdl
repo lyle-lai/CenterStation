@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="runfun">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlpara" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="runfunResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="runfunResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="runfunSoapIn">
+    <wsdl:part name="parameters" element="tns:runfun" />
+  </wsdl:message>
+  <wsdl:message name="runfunSoapOut">
+    <wsdl:part name="parameters" element="tns:runfunResponse" />
+  </wsdl:message>
+  <wsdl:message name="runfunHttpGetIn">
+    <wsdl:part name="xmlpara" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="runfunHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="runfunHttpPostIn">
+    <wsdl:part name="xmlpara" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="runfunHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="TransfusionSoap">
+    <wsdl:operation name="runfun">
+      <wsdl:input message="tns:runfunSoapIn" />
+      <wsdl:output message="tns:runfunSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TransfusionHttpGet">
+    <wsdl:operation name="runfun">
+      <wsdl:input message="tns:runfunHttpGetIn" />
+      <wsdl:output message="tns:runfunHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TransfusionHttpPost">
+    <wsdl:operation name="runfun">
+      <wsdl:input message="tns:runfunHttpPostIn" />
+      <wsdl:output message="tns:runfunHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TransfusionSoap" type="tns:TransfusionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="runfun">
+      <soap:operation soapAction="http://tempuri.org/runfun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransfusionSoap12" type="tns:TransfusionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="runfun">
+      <soap12:operation soapAction="http://tempuri.org/runfun" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransfusionHttpGet" type="tns:TransfusionHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="runfun">
+      <http:operation location="/runfun" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransfusionHttpPost" type="tns:TransfusionHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="runfun">
+      <http:operation location="/runfun" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Transfusion">
+    <wsdl:port name="TransfusionSoap" binding="tns:TransfusionSoap">
+      <soap:address location="http://10.10.10.5/MobileWebSrv/Transfusion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransfusionSoap12" binding="tns:TransfusionSoap12">
+      <soap12:address location="http://10.10.10.5/MobileWebSrv/Transfusion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransfusionHttpGet" binding="tns:TransfusionHttpGet">
+      <http:address location="http://10.10.10.5/MobileWebSrv/Transfusion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransfusionHttpPost" binding="tns:TransfusionHttpPost">
+      <http:address location="http://10.10.10.5/MobileWebSrv/Transfusion.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

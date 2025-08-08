@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A23C4493-ACB5-484E-99A1-E0692097E09F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ViewPack</RootNamespace>
+    <AssemblyName>ViewPack</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetSpeech, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\DotNetSpeech.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="Syste.Data.SQLite">
+    <!-- <Reference Include="System.Data.SQLite, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL"> -->
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\lib\net46\System.Data.SQLite.dll</HintPath>
+      <!-- <HintPath>..\packages\System.Data.SQLite.dll</HintPath> -->
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ScanLine.cs" />
+    <Compile Include="ViewParaItem.cs" />
+    <Compile Include="ViewList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewParaGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewWaveGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewWaveItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DemoPack\DemoPack.csproj">
+      <Project>{6323AEB6-CB97-47DB-B4CD-B8DBF0B625CC}</Project>
+      <Name>DemoPack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GlobalClass\GlobalClass.csproj">
+      <Project>{CF582F5F-13FD-4705-9F04-C4153FE745FE}</Project>
+      <Name>GlobalClass</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\History_Pack\History_Pack.csproj">
+      <Project>{9ECA97B7-78FA-4FBC-A116-A051A6BB4AEF}</Project>
+      <Name>History_Pack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjPack\MGOA_Pack.csproj">
+      <Project>{B1E174B5-3B7B-4AEE-BD18-EE7BF1C42181}</Project>
+      <Name>MGOA_Pack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProtocolPack\ProtocolPack.csproj">
+      <Project>{c964398c-72f3-44c8-a7a6-0ced63d9f159}</Project>
+      <Name>ProtocolPack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Settings\Settings.csproj">
+      <Project>{d613b52d-ccc9-4e0a-884c-322e13fadde0}</Project>
+      <Name>Settings</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LayoutBedView.cs" />
+    <Compile Include="SCR.cs" />
+    <Compile Include="ViewMonitor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewTitle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

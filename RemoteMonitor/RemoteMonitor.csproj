@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B3631F89-032F-47EB-AF54-6920FAA896AE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RemoteMonitor</RootNamespace>
+    <AssemblyName>RemoteMonitor</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>centerstation.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetSpeech, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\DotNetSpeech.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAlarmPara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAlarmPara.Designer.cs">
+      <DependentUpon>FrmAlarmPara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAlarmQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAlarmQuery.Designer.cs">
+      <DependentUpon>FrmAlarmQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBedManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBedManage.Designer.cs">
+      <DependentUpon>FrmBedManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCascadeSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCascadeSetting.Designer.cs">
+      <DependentUpon>FrmCascadeSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFullScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFullScreen.Designer.cs">
+      <DependentUpon>FrmFullScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHistory.Designer.cs">
+      <DependentUpon>FrmHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLayoutSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLayoutSetting.designer.cs">
+      <DependentUpon>FrmLayoutSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMonitor.Designer.cs">
+      <DependentUpon>FrmMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMonitorConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMonitorConfig.Designer.cs">
+      <DependentUpon>FrmMonitorConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMonitorEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMonitorEdit.Designer.cs">
+      <DependentUpon>FrmMonitorEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSysSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSysSetting.Designer.cs">
+      <DependentUpon>FrmSysSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAlarmPara.resx">
+      <DependentUpon>FrmAlarmPara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAlarmQuery.resx">
+      <DependentUpon>FrmAlarmQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBedManage.resx">
+      <DependentUpon>FrmBedManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCascadeSetting.resx">
+      <DependentUpon>FrmCascadeSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFullScreen.resx">
+      <DependentUpon>FrmFullScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHistory.resx">
+      <DependentUpon>FrmHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLayoutSetting.resx">
+      <DependentUpon>FrmLayoutSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMonitor.resx">
+      <DependentUpon>FrmMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMonitorConfig.resx">
+      <DependentUpon>FrmMonitorConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMonitorEdit.resx">
+      <DependentUpon>FrmMonitorEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSysSetting.resx">
+      <DependentUpon>FrmSysSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLicence.resx">
+      <DependentUpon>FrmLicence.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FrmLicence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLicence.Designer.cs">
+      <DependentUpon>FrmLicence.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DemoPack\DemoPack.csproj">
+      <Project>{6323AEB6-CB97-47DB-B4CD-B8DBF0B625CC}</Project>
+      <Name>DemoPack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GlobalClass\GlobalClass.csproj">
+      <Project>{CF582F5F-13FD-4705-9F04-C4153FE745FE}</Project>
+      <Name>GlobalClass</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HistoryPack\HistoryPack.csproj">
+      <Project>{C8DFDE7E-6FA4-49C8-A5AF-DAD6A236643C}</Project>
+      <Name>HistoryPack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\History_Pack\History_Pack.csproj">
+      <Project>{9ECA97B7-78FA-4FBC-A116-A051A6BB4AEF}</Project>
+      <Name>History_Pack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kenel32Pack\Kenel32Pack.csproj">
+      <Project>{AC84ACBF-CB70-440D-A985-0CD0D149AF65}</Project>
+      <Name>Kenel32Pack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjPack\MGOA_Pack.csproj">
+      <Project>{B1E174B5-3B7B-4AEE-BD18-EE7BF1C42181}</Project>
+      <Name>MGOA_Pack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProtocolPack\ProtocolPack.csproj">
+      <Project>{C964398C-72F3-44C8-A7A6-0CED63D9F159}</Project>
+      <Name>ProtocolPack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Settings\Settings.csproj">
+      <Project>{D613B52D-CCC9-4E0A-884C-322E13FADDE0}</Project>
+      <Name>Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewPack\ViewPack.csproj">
+      <Project>{a23c4493-acb5-484e-99a1-e0692097e09f}</Project>
+      <Name>ViewPack</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="centerstation.ico" />
+    <Content Include="Config\DataDefine.DB">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\RW_SYS.DB">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\centerstation.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
