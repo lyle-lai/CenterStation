@@ -14,6 +14,12 @@ namespace RemoteMonitor
         [STAThread]
         static void Main()
         {
+            if (!LicenseManager.CheckLicense(out string reason))
+            {
+                MessageBox.Show($"授权验证失败：{reason}\n请联系供应商。", "授权错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
             try
             {
                 Application.SetUnhandledExceptionMode(UnhandledExceptionMode.Automatic);
